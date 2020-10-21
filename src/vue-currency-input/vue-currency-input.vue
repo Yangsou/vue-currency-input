@@ -52,7 +52,7 @@ export default {
       // and puts cursor back in right position.
 
       // get input value
-      let inputVal = input.value.replace(/,/g, '');
+      let inputVal = input.value;
 
       if ((this.$props.maxValue && Number(inputVal) > this.$props.maxValue) || this.$props.maxValue === 0) {
       input.value = '0';
