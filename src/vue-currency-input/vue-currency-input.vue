@@ -64,11 +64,11 @@ export default {
       if (inputVal === '') { return; }
 
       // original length
-      // const originalLen = inputVal.length;
+      const originalLen = inputVal.length;
 
       // initial caret position 
       // let caretPos = input.prop('selectionStart');
-      // let caretPos = input.selectionStart;
+      let caretPos = input.selectionStart;
 
       inputVal = formatCurrency(inputVal);
 
@@ -80,10 +80,23 @@ export default {
       this.$emit('update:value', inputVal);
 
       // put caret back in the right position
-      // const updatedLen = inputVal.length;
-      // caretPos = updatedLen - originalLen + caretPos;
-      // input.setSelectionRange(caretPos, caretPos);
+      const updatedLen = inputVal.length;
+      caretPos = updatedLen - originalLen + caretPos;
+      input.setSelectionRange(caretPos, caretPos);
     }
   }
 };
 </script>
+<style scoped>
+  .currency-input {
+    height: 32px;
+    line-height: 32px;
+    padding: 0 8px;
+    border-radius: 4px;
+    border: 1px solid #bebebe;
+  }
+  .currency-input:focus,
+  .currency-input:visited {
+    border-color: #2ea2f8;
+  }
+</style>

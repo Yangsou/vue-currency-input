@@ -2,7 +2,7 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
-    <CurrencyInput v-model="cost" @change="changeCost" @focus="focusCost" />
+    <CurrencyInput class="test" v-model="cost" @change="changeCost" @focus="focusCost" />
   </div>
 </template>
 
